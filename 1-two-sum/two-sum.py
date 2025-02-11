@@ -6,14 +6,11 @@ class Solution(object):
         :rtype: List[int]
         """
         store = {}
-        
+
         for i, num in enumerate(nums):
             complement = target - num
-            if complement in store:
+            if(complement in store):
                 return [store[complement], i]
             store[num] = i
-        return []
-
-        return res
-
+        return
         
