@@ -1,12 +1,8 @@
-class Solution(object):
-    def arrayRankTransform(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
         rank = {}
-        for a in sorted(arr):
-            if a not in rank:
-                rank[a] = len(rank) + 1
-        return map(rank.get, arr)
-        
+
+        for i in sorted(arr):
+            if i not in rank:
+                rank[i] = len(rank) + 1
+        return list(map(rank.get, arr))
