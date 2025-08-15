@@ -1,10 +1,7 @@
-class Solution(object):
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
         l, r = 0, len(height) - 1
+
         res = 0
 
         while l < r:
@@ -15,6 +12,4 @@ class Solution(object):
                 l += 1
             else:
                 r -= 1
-        return res
-        
-        
+        return res 
