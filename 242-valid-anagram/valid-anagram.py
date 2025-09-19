@@ -1,20 +1,14 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
-        alpha = [0] * 26
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+        arr = 26 * [0]
+
         for i in range(len(s)):
-            alpha[ord(s[i]) - ord('a')] += 1
-            alpha[ord(t[i]) - ord('a')] -= 1
-        for val in alpha:
+            arr[ord(s[i]) - ord('a')] += 1
+            arr[ord(t[i]) - ord('a')] -= 1
+
+        for val in arr:
             if val != 0:
                 return False
         return True
-        
-        
-        
