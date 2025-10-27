@@ -3,15 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        left = 0
-        right = 1
-        while(right < len(nums)):
+        lastNonZero = 0 # this will move to the next non zero elemnet
 
-            if nums[left] == 0 and nums[right] != 0:
-                nums[left], nums[right] = nums[right], nums[left]
-            if nums[left] !=0:
-                left += 1
-            right+= 1
-
-
-            
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[i], nums[lastNonZero] = nums[lastNonZero], nums[i]
+                lastNonZero += 1
+        
