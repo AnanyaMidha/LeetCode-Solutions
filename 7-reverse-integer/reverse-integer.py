@@ -1,9 +1,5 @@
-class Solution(object):
-    def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+class Solution:
+    def reverse(self, x: int) -> int:
         rev_num = 0
         int_min, int_max = -2**31, 2**31 - 1
 
@@ -18,6 +14,3 @@ class Solution(object):
             x = (x - digit) // 10
 
         return rev_num
-       
-            
-        
